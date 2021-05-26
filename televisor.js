@@ -6,11 +6,11 @@ module.exports = class Televisor extends Electrodomestico {
         super(consumo, procedencia);
         this.tamano = tamano;
         this.poseeTDT = tdt;
+        this.calcularPrecioTv();
     }
 
     
-    calcularPrecio(){
-        super.calcularPrecio();
+    calcularPrecioTv(){
         this.sobrecostoTamano();
         this.sobrecostoTDT();
     }
@@ -21,7 +21,6 @@ module.exports = class Televisor extends Electrodomestico {
     sobrecostoTDT(){
         if (this.poseeTDT) {
             super.precioAdicional(250000);
-            console.log("Televisor con tdt");
         }
     }
 }
